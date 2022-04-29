@@ -2144,17 +2144,14 @@ def get_financial_aid_courses(user, course_id=None):
                     Q(_expiration_datetime__isnull=True) | Q(_expiration_datetime__gt=datetime.now(UTC)),
                     course_id=enrollment.course_id,
                     mode_slug=CourseMode.VERIFIED).exists():
-            default = False
             # This is a workaround to set course_id before disabling the field in case of new financial assistance flow.
             if str(enrollment.course_overview) == course_id:
-                default = True
-            financial_aid_courses.append(
-                {
+                financial_aid_courses = [{
                     'name': enrollment.course_overview.display_name,
                     'value': str(enrollment.course_id),
-                    'default': default
-                }
-            )
+                    'default': True
+                }]
+                break
 
     return financial_aid_courses
 
