@@ -1,0 +1,79 @@
+div.hil-youtube{
+	width: 100%;
+	max-width: 450px;
+	min-width: 200px;
+	height: 200px;
+	border: 1px solid #ccc;
+	position: relative;
+}
+
+div.hil-youtube audio{
+	width: 94%;
+	position: absolute;
+	left: 3%;
+	bottom: 10px;
+	transition: opacity 0.3s;
+	pointer-events: none;
+	opacity: 0;
+}
+
+div.hil-youtube div.btn-play{
+	width: 80px;
+	height: 80px;
+	border: 1px solid #ccc;
+	background: white;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+	border-radius: 50%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate3d(-50%, -50%, 0);
+	transition: opacity 0.3s;
+}
+
+div.hil-youtube div.btn-play .icon{
+	position: absolute;
+	font-size: 40px;
+	left: 55%;
+	top: 50%;
+	transform: translate3d(-50%, -50%, 0);
+	color: darkgray;
+}
+
+div.hil-youtube:before{
+	font-size: 18px;
+	color: darkgray;
+	position: absolute;
+	width: 100%;
+	top: 40%;
+	left: 0;
+	text-align: center;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+div.hil-youtube.playing:before{
+	opacity: 1;
+}
+
+div.hil-youtube.has-audio-C:before{
+	content: "請觀看影片，並收聽粵語配音";
+}
+
+div.hil-youtube.has-audio-M:before{
+	content: "請觀看影片，並收聽國語配音";
+}
+
+div.hil-youtube.no-audio:before{
+	content: "請觀看影片";
+}
+
+div.hil-youtube.playing div.btn-play{
+	pointer-events: none;
+	opacity: 0;
+}
+
+div.hil-youtube.playing audio{
+	pointer-events: auto;
+	opacity: 1;
+}

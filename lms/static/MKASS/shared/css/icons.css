@@ -1,0 +1,50 @@
+i.spliter{
+	display: inline-block;
+	font-family: FontAwesome;
+	font-size: inherit;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	transform: scale(0.25);
+	-webkit-transform: scale(0.25);
+}
+i.spliter:before{content: "\f111";}
+
+
+/* --- FA + Glyphicons Icon --- */
+.icon{
+  display: inline-block;
+  font-family: FontAwesome, 'Glyphicons Halflings';
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0.09em);
+}
+
+.icon-inter, .icon-close, .icon-tick{
+	transform: translate(0, 0);
+}
+
+.icon.icon-inter:before{content: "\f0c3"}
+.icon.icon-photo:before{content: "\e060"}
+.icon.icon-video:before{content: "\e059"}
+.icon.icon-ani:before{content:"\e072"}
+.icon.icon-table:before{content:"\e012"}
+.icon.icon-close:before{content:"\f00d"}
+.icon.icon-close2:before{content:"\e088"}
+.icon.icon-tick:before{content:"\f00c"}
+.icon.icon-tick2:before{content:"\e089"}
+.icon.icon-larrow:before{content:"\e079"}
+.icon.icon-rarrow:before{content:"\e080"}
+.icon.icon-fullscr:before{content:"\e140"}
+
+.glyphicon.icon-photo:before{content:"\e060"}
+.glyphicon.icon-inter:before{content:"\e068"}
+.glyphicon.icon-video:before{content:"\e059"}
+.glyphicon.icon-ani:before{content:"\e072"}

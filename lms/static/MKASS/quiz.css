@@ -1,0 +1,184 @@
+body {
+    font-family:sans-serif;
+    --theme:darkmagenta;
+}
+button {
+    margin:auto;
+    font-size:2em;
+}
+.MJX_Assistive_MathML {
+    display:none;
+}
+#select {
+    background:var(--theme);
+    padding:.5em 0;
+    text-align: center;
+}
+#select input {
+    display:none;
+}
+#select label:nth-of-type(9)~label::first-letter {
+    letter-spacing:-.025em;
+}
+#select label {
+    width:1.5em;height:1.5em;line-height:1.5em;
+    display:inline-block;
+    text-align: center;font-size:1.25em;color:grey;
+    background:plum;color:var(--theme);
+    border-radius: 9em;
+    margin:.3em;
+    outline-offset: .1em;
+}
+#select input:checked+label {
+    background:var(--theme);color:white;
+    border:.1em solid white;
+}
+#select input:not(:checked)+label:not(.answered) {
+    filter:saturate(0%)
+}
+#select .scored {
+    outline:.1em solid limegreen;
+}
+:host(mkass-quiz[state=report]) #select label:not(.scored) {
+    outline:.1em solid red;
+}
+:host(mkass-quiz[state=report]) #select label {
+    filter:initial;
+}
+:host(mkass-question:not(.doing)) {
+    position:absolute;
+    display:none;
+}
+mkass-question p .MathJax {
+    margin:.25em 0;
+}
+:host(mkass-question) div {
+    margin-top:1em;
+}
+:host(mkass-question) input {
+    margin-right:.5em;
+}
+:host(mkass-question) label {
+    padding:.5em;margin-left:1em;
+    border:.1em dashed silver;border-radius:.5em;
+    box-sizing: border-box;
+    display:inline-block;width:calc(100% - 3em);
+    position:relative;
+    line-height:1.4;
+}
+:host(mkass-question) input:checked+label {
+    border:.1em solid var(--theme);
+}
+:host(mkass-question) label::before,
+:host(mkass-question) label::after {
+    position: absolute;top:50%;transform:translateY(-50%);
+    border-width:1.1em 1em 1.1em 0;border-style:solid;
+}
+:host(mkass-question) label::before {
+    right:calc(100% + .01em);
+    border-color:transparent var(--theme) transparent transparent;
+}
+:host(mkass-question) label::after {
+    right:calc(100% - .12em);
+    border-color:transparent white transparent transparent;
+}
+:host(mkass-question) input:checked+label::before,
+:host(mkass-question) input:checked+label::after {
+    content:'';
+}
+dl {
+    text-align:right;
+}
+dt,dd {
+    display:inline;
+}
+dt:not(:empty)::after {
+    content:'：';
+}
+dt {
+    font-size:1.25em;
+}
+dd {
+    font-size:3em;
+    color:var(--theme);
+    margin:0;
+}
+.passed,.failed {
+    font-size:1em;
+}
+.passed::before,.failed::before {
+    content:' ー';
+}
+dd.passed {
+    color:limegreen;
+}
+dd.failed {
+    color:red;
+}
+div {
+    position:relative;
+}
+:host(mkass-question) div::before {
+    position:absolute;left:-.05em;top:calc(50% - .15em);
+    z-index:9;
+}
+div.scored::before {
+    content:'';color:limegreen;
+}
+div.missed::before {
+    content:'';color:red;
+}
+#next {
+    color:var(--theme);
+}
+#next[for=''],#next:not([for=''])+button {
+    display:none;
+}
+button {
+    font-size:1.1em;
+    background:plum;
+    border:.1em solid var(--theme);border-radius: 9em;
+    padding:0 .5em;
+}
+#next+button {
+    font-size: 2em;
+    border-radius: 9em;
+    width: 1.5em;height: 1.5em;line-height: 1.2em;
+    border: none;
+    background: var(--theme);color: white;
+    padding:0;
+}
+:host(mkass-question) div::before,#next {
+    font-family:icon;font-size:3em;
+}
+:host(mkass-quiz) #buttons {
+    display:flex;justify-content:flex-end;align-items:center;
+    padding:.5em;
+}
+:host(mkass-question) #buttons {
+    text-align:right;
+    display:none;
+}
+div.missed~#buttons,div.scored~#buttons {
+    display:block;
+}
+:host(mkass-question) #buttons button {
+    margin:0 .5em;
+}
+div[slot^=feedback] {
+    margin:.5em 0 1.5em 0;
+}
+div[slot^=feedback]::before {
+    content:'';
+    font-family:icon;color:var(--theme);font-size:2em;
+    vertical-align: middle;
+}
+div[slot^=feedback] p:only-child {
+    display:inline-block;
+    vertical-align: middle;
+    margin:0 0 0 .5em;
+}
+@font-face {
+    font-family:'icon';font-display:block;
+    src: url("http://maple.com/static/MKASS/fa-solid-900.woff2") format("woff2");
+}

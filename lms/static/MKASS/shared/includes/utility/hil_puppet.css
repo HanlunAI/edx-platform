@@ -1,0 +1,336 @@
+/* Layout */
+div.hil-puppet div.pager-box{
+	z-index: 1000;
+}
+
+div.hil-puppet .puppet-btn{
+	z-index: 999;
+}
+
+div.hil-puppet ul.play-list{
+	z-index: 998;
+}
+
+div.hil-puppet .subtitle{
+	z-index: 997;
+}
+
+div.hil-puppet{
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+
+/* Transitions */
+.transit-show{
+	transition: opacity 300ms linear, visibility 0ms linear;
+	visibility: visible;
+	opacity: 1;
+}
+
+.transit-hide{
+	transition: opacity 300ms linear, visibility 0ms linear 300ms;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.puppet-hidden{
+	transition: all 0s ease-in-out 0s !important;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.list-on{
+	opacity: 1;
+	font-weight: 900;
+}
+
+.list-off{
+	opacity: 0.4;
+	font-weight: 500;
+}
+
+.list-off .list-mark{
+	opacity: 0;
+}
+
+.subtitle-on{
+	transition: opacity 400ms linear 500ms, visibility 0ms linear 500ms;
+	visibility: visible;
+	opacity: 1;
+}
+
+.subtitle-off{
+	transition: opacity 100ms linear, visibility 0ms linear 100ms;
+	visibility: hidden;
+	opacity: 0;
+}
+
+
+/* default Style */
+
+/* frame */
+div.hil-puppet{
+	border-color : DarkGray;
+	border-style : solid;
+	border-width : 1px;
+	border-radius : 4px;
+	background-color : white;
+	font-family: LiHei Pro, 微軟正黑體, Microsoft JhengHei, MS Gothic, MHei, Hei, Arial, Verdana, Geneva, sans-serif;
+	font-size: 17px;
+}
+div.hil-puppet[pager]{
+	margin-bottom: 50px;
+}
+
+/* play-list */
+div.hil-puppet ul.play-list{
+	position: absolute;
+	top: 20px;
+	right: 25px;
+	font-size: 19px;
+	list-style-type: none;
+	color: #58626B;
+}
+
+div.hil-puppet ul.play-list .list-mark{
+	padding-right: 8px;
+}
+
+div.hil-puppet ul.play-list li{
+	padding-bottom: 3px;
+}
+
+div.hil-puppet ul.play-list li:hover{
+	cursor: pointer;
+}
+
+
+/* pager */
+div.hil-puppet div.pager-box{
+	left: 50%;
+	bottom: -35px;
+	transform : rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+}
+
+div.hil-puppet div.pager-box div.page-indicator{
+	box-sizing : content-box;
+	width: 8px;
+	height: 8px;
+	border-color : DarkGray;
+	border-style : solid;
+	border-width : 1px;
+	border-radius : 8px;
+	background-color: rgb(209, 216, 221);
+	transform: translate3d(-50%, -50%, 0);
+	-webkit-transform: translate3d(-50%, -50%, 0);
+}
+
+div.hil-puppet div.pager-box div.page-indicator:hover{
+	border-width : 2px;
+	border-color : rgb(130, 145, 161);
+	cursor: pointer;
+}
+
+
+div.hil-puppet div.pager-box div.page-indicator.list{
+
+}
+
+div.hil-puppet div.pager-box div.page-indicator.active{
+	border-width : 2px;
+	border-color : rgb(130, 145, 161);
+	background-color: white;
+}
+
+
+/* subtitle */
+div.hil-puppet .subtitle{
+	position: absolute !important;
+	width: 290px;
+	left: 0;
+    right: 0;
+	margin: 0 auto;
+	bottom: 22px;
+	text-align: left;
+}
+
+div.hil-puppet .subtitle p{
+	margin: 0px 0px 10px 0px;
+}
+
+div.hil-puppet .subtitle p:last-child{
+	margin: 0px;
+}
+
+
+/* control buttons */
+div.hil-puppet .forward-btn{
+	right: 28px;
+	bottom: 13px;
+}
+
+div.hil-puppet .backward-btn{
+	left: 28px;
+	bottom: 13px;
+}
+
+div.hil-puppet .play-btn{
+	right: 24px;
+	bottom: 13px;
+}
+
+div.hil-puppet .replay-btn{
+	right: 28px;
+	bottom: 13px;
+}
+
+
+div.hil-puppet .puppet-btn{
+	position: absolute;
+	color: rgb(130, 145, 161);
+	font-size: 14px;
+}
+
+div.hil-puppet .play-btn{
+	font-size: 19px;
+	color: DarkSeaGreen;
+}
+
+div.hil-puppet .puppet-btn:active{
+	transform: scale(0.9);
+}
+
+
+div.hil-puppet .puppet-btn i{
+	transition: transform 0.3s ease-out;
+}
+
+div.hil-puppet .backward-btn:hover i{
+	transform: translate3d(-7px, 0px, 0px);
+	transition: transform 0.6s cubic-bezier(0.3, 3, 0.2, 0.15);
+}
+
+div.hil-puppet .forward-btn:hover i{
+	transform: translate3d(7px, 0px, 0px);
+	transition: transform 0.6s cubic-bezier(0.3, 3, 0.2, 0.15);
+}
+
+div.hil-puppet .replay-btn:hover i{
+	transform: rotate(-30deg);
+	transition: transform 0.5s cubic-bezier(0.3, 3, 0.2, 0.15);
+}
+
+div.hil-puppet .play-btn:hover i{
+	transform: scale(1.2);
+	transition: transform 0.5s cubic-bezier(0.3, 3, 0.2, 0.15);
+}
+
+
+/* dialog box */
+div.hil-puppet div.dialog-box{
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	box-shadow: 2px 2px 3px rgba(0,0,0,.08);
+	border-color : rgb(205, 209, 213);
+	border-style : solid;
+	border-width : 2px;
+	border-radius : 7px;
+	background-color : white;
+	position: relative;
+	padding: 10px 12px;
+	text-align: left;
+}
+
+div.hil-puppet div.dialog-box .arrow-left{
+	position: absolute;
+	margin-top: -15px;
+	top: 60%;
+	left: -30px;
+	border-color : transparent;
+	border-right-color : rgb(205, 209, 213);
+	border-style : solid;
+	border-width : 15px;
+}
+
+div.hil-puppet div.dialog-box .arrow-left:after{
+	content: "";
+	position: absolute;
+	margin-left: 3px;
+	left: -15px;
+	top: -15px;
+	border-color : transparent;
+	border-right-color : white;
+	border-style : solid;
+	border-width : 15px;
+}
+
+div.hil-puppet div.dialog-box .arrow-right{
+	position: absolute;
+	margin-top: -15px;
+	top: 60%;
+	right: -30px;
+	border-color : transparent;
+	border-left-color : rgb(205, 209, 213);
+	border-style : solid;
+	border-width : 15px;
+}
+
+div.hil-puppet div.dialog-box .arrow-right:after{
+	content: "";
+	position: absolute;
+	margin-right: 3px;
+	right: -15px;
+	top: -15px;
+	border-color : transparent;
+	border-left-color : white;
+	border-style : solid;
+	border-width : 15px;
+}
+
+div.hil-puppet div.dialog-box .arrow-up{
+	position: absolute;
+	margin-left: -15px;
+	left: 40%;
+	top: -30px;
+	border-color : transparent;
+	border-bottom-color : rgb(205, 209, 213);
+	border-style : solid;
+	border-width : 15px;
+}
+
+div.hil-puppet div.dialog-box .arrow-up:after{
+	content: "";
+	position: absolute;
+	margin-top: 3px;
+	right: -15px;
+	top: -15px;
+	border-color : transparent;
+	border-bottom-color : white;
+	border-style : solid;
+	border-width : 15px;
+}
+
+div.hil-puppet div.dialog-box .arrow-down{
+	position: absolute;
+	margin-left: -15px;
+	left: 40%;
+	bottom: -30px;
+	border-color : transparent;
+	border-top-color : rgb(205, 209, 213);
+	border-style : solid;
+	border-width : 15px;
+}
+
+div.hil-puppet div.dialog-box .arrow-down:after{
+	content: "";
+	position: absolute;
+	margin-bottom: 3px;
+	right: -15px;
+	bottom: -15px;
+	border-color : transparent;
+	border-top-color : white;
+	border-style : solid;
+	border-width : 15px;
+}

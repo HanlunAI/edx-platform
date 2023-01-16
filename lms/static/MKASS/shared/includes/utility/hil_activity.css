@@ -1,0 +1,273 @@
+/* v2.12 */
+
+/* General settings */
+.hil-activity-group{
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.hil-activity-group[paused] .hil-activity{
+	pointer-events: none;
+}
+.hil-activity-group[paused] .hil-drag-box{
+	pointer-events: none;
+}
+
+.hil-activity-group .hil-activity{
+	display: inline-block;
+	position: relative;
+}
+
+
+/* marker */
+.hil-activity-group span.tickCross{
+	pointer-events: none;
+	font-size: 23px;
+	position: relative;
+	z-index: 998;
+}
+
+.hil-activity-group span.foot-mark{
+	position:absolute;
+	left: calc(100% - 15px);
+	top: calc(100% - 15px);
+}
+
+.hil-activity-group span.tickCross i.fa{
+	font-size: 30px;
+}
+
+.hil-activity-group span.tickCross span.fa-stack{
+	position: relative;
+	left: -11px;
+}
+
+
+/* extra styles */
+.hil-activity-group .hil-answer-btn-on{
+	border-color: steelblue;
+	border-style: solid;
+	border-width: 4px;
+}
+
+.hil-activity-group div.explain-box{
+	border-color: DarkGray;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 3px;
+	padding: 10px 30px 10px 30px;
+	border-left-width: 5px;
+	border-left-color: SteelBlue;
+}
+
+.hil-activity-group div.line{
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+
+/* Drop down button */
+.hil-activity-group button.hil-dropdown{
+	background-image: none;
+	font-size: 1em;
+	outline: none !important;
+	vertical-align: initial;
+	padding: 4px 8px;
+}
+
+.hil-activity-group ul.hil-dropdown-menu {
+	font-size: 1em;
+	position: absolute;
+	top: calc(100% + 3px);
+	left: 0px;
+	background-color: white;
+	z-index: 999;
+    list-style-type: none;
+    border-color: DarkGray;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 4px;
+	padding: 5px 0px 5px 0px;
+	box-shadow: 0px 0px 8px rgba(0,0,0,0.25)
+}
+
+.hil-activity-group ul.hil-dropdown-menu  li{
+	padding: 3px 15px 3px 15px;
+	white-space: nowrap;	/* Thank Google */
+}
+
+.hil-activity-group ul.hil-dropdown-menu  li:hover {
+    background-color: rgba(0,0,0,0.06);
+}
+
+.hil-activity-group div.hil-dropdown.hil-activity{
+	margin-top: 7px;
+	margin-bottom: 7px;
+}
+
+
+
+/* Drag and Drop */
+.hil-activity-group .hil-drop-box{
+	position: relative;
+	border-radius: 4px;
+}
+
+.hil-activity-group .hil-drag-box{
+	position: relative;
+	cursor: default;
+}
+
+.hil-activity-group .hil-drop-box:before{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 4px;
+	border: 3px dashed DarkGray;
+	opacity: 0;
+	transition: opacity 0.3s;
+	pointer-events: none;
+}
+
+.hil-activity-group .hil-drop-box:after{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 4px;
+	background-color: rgba(0,0,0,0.09);
+	opacity: 0;
+	transition: opacity 0.25s;
+	pointer-events: none;
+	visibility: hidden;
+}
+
+.hil-activity-group[dragging] .hil-drop-box:before{
+	opacity: 1;
+}
+.hil-activity-group[dragging] .hil-drop-box:after{
+	visibility: visible;
+}
+.hil-activity-group[dragging] .hil-drop-box[hover=yes]:after{
+	opacity: 1;
+}
+.hil-activity-group .hil-drop-box[no-border]:before{
+	visibility: hidden;
+}
+.hil-activity-group .hil-drop-box[fill=yes]:before{
+	visibility: hidden;
+}
+
+
+.hil-activity-group .hil-drag{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	border-radius: 4px;
+	width: 100%;
+	height: 100%;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.hil-activity-group .hil-drag:not(.flat){
+	border: 1px solid #ccc;
+	background-color: white;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.1);
+}
+
+.hil-activity-group .hil-drag.flat{
+	border: none;
+	box-shadow: none;
+	background-color: transparent;
+}
+
+
+/* checkbox */
+.hil-activity-group .hil-checkbox{
+	white-space: nowrap;	/* Thank Google */
+	padding-left: 2.6em;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	position: relative;
+}
+
+.hil-activity-group .hil-checkbox span.box{
+	position: absolute;
+	top: calc(50% - 0.9em);
+	left: 0;
+}
+
+.hil-activity-group .hil-checkbox span.box .unchecked{
+	color: rgba(83,93,109,0.7);
+}
+
+.hil-activity-group .hil-checkbox span.box .checked{
+	color: #679ced;
+}
+
+.hil-activity-group .hil-checkbox span.foot-mark{
+	left: calc(100% + 6px);
+	top: calc(100% - 35px);
+}
+
+
+/* radio button */
+
+.hil-activity-group .hil-radio-btn *[value]{
+	list-style-type: none;
+	padding-left: 2.2em;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	white-space: nowrap;	/* Thank Google */
+	position: relative;
+}
+
+.hil-activity-group .hil-radio-btn ul.inline li{
+	display: inline-block;
+	margin-right: 2.5em;
+}
+
+.hil-activity-group .hil-radio-btn span[value], 
+.hil-activity-group .hil-radio-btn div[value]{
+	display: inline-block;
+}
+
+.hil-activity-group .hil-radio-btn span.foot-mark{
+	left: calc(100% + 5px);
+	top: calc(100% - 35px);
+}
+
+.hil-activity-group .hil-radio-btn span.box{
+	position: absolute;
+	top: calc(50% - 0.65em);
+	left: 0;
+	height: 1.3em;
+	width: 1.3em;
+	border-radius: 50%;
+	vertical-align: middle;
+	background-color: rgba(83,93,109,0.15);
+	box-sizing: border-box;
+	box-shadow: inset 0px 1px 1px rgba(0,0,0,0.15);
+}
+
+.hil-activity-group .hil-radio-btn span.box.checked{
+	border-color: #679ced;
+	background-color: white;
+	border-width: 6px;
+	border-style: solid;
+}
+
+
+/* text box */
+.hil-activity-group .hil-activity.hil-input{
+	line-height: 1.5;
+}
+
+
+

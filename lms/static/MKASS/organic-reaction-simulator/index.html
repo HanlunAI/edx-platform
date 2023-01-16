@@ -1,0 +1,465 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/drag.js"></script>
+<style>
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+img{
+	border:0px;
+}
+.menu1{
+	font-family:微軟正黑體;
+	font-size:16px;
+	color:#FFF;
+	border:#6F2C91 solid 1px;
+	background:#775986;
+	height:30px;
+	position:absolute;
+	line-height:30px;
+	text-indent:10px;
+}
+.menu2{
+	font-family:微軟正黑體;
+	font-size:16px;
+	color:#000;
+	border:#6F2C91 solid 1px;
+	height:30px;
+	position:absolute;
+	line-height:30px;
+}
+.menu3{
+	position:absolute;
+}
+.menu4{
+	font-family:微軟正黑體;
+	font-size:16px;
+	color:#000;
+	border:#6F2C91 solid 1px;
+	height:30px;
+	position:absolute;
+	left:0px;
+}
+</style>
+<script>
+$(function(){
+	
+});
+</script>
+<script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}//MM_swapImage('Image1','','bbb',1)
+</script>
+</head>
+
+<body onLoad="MM_preloadImages('images/a1.png','images/a2.png','images/a3.png','images/a4.png','images/a5.png','images/a6.png','images/a1_over.png','images/a2_over.png','images/a3_over.png','images/a4_over.png','images/a5_over.png','images/a6_over.png','images/b1.png','images/b2.png','images/b3.png','images/b4.png','images/b5.png','images/b6.png','images/b7.png','images/b8.png','images/b9.png','images/b10.png','images/b1_over.png','images/b2_over.png','images/b3_over.png','images/b4_over.png','images/b5_over.png','images/b6_over.png','images/b7_over.png','images/b8_over.png','images/b9_over.png','images/b10_over.png','images/c1.png','images/c2.png','images/c3.png','images/c1_over.png','images/c2_over.png','images/c3_over.png','images/d1.png','images/d2.png','images/d3.png','images/d4.png','images/d5.png','images/d6.png','images/d7.png','images/d8.png','images/d9.png','images/d10.png','images/d1_over.png','images/d2_over.png','images/d3_over.png','images/d4_over.png','images/d5_over.png','images/d6_over.png','images/d7_over.png','images/d8_over.png','images/d9_over.png','images/d10_over.png','images/e1.png','images/e2.png','images/e3.png','images/e4.png','images/e5.png','images/e6.png','images/e7.png','images/e1_over.png','images/e2_over.png','images/e3_over.png','images/e4_over.png','images/e5_over.png','images/e6_over.png','images/e7_over.png')">
+<div style="width:1153px; height:900px; background:url(images/bg1.png);">
+	<div style="position:absolute; left:40px; top:30px; width:390px; height:250px; background-color:#5EB78B;"></div>
+	<div style="position:absolute; left:479px; top:30px; width:150px; height:250px; background-color:#E2B171;"></div>
+	<div style="position:absolute; left:763px; top:30px; width:350px; height:250px; background-color:#619FC1;"></div>
+
+	<div style="width:110px; left:50px; top:40px;" class="menu1">碳鏈長度</div>
+	<div style="width:130px; left:170px; top:40px;" class="menu1">官能基</div>
+	<div style="width:110px; left:310px; top:40px;" class="menu1">位置</div>
+	
+	<div style="width:130px; left:489px; top:40px;" class="menu1">反應物</div>
+	<div style="width:110px; left:641px; top:40px;" class="menu1">反應條件</div>
+	<div style="width:330px; left:773px; top:40px;" class="menu1">生成物（或主生成物）</div>
+	
+	<div id="left_img" style="position:absolute; left:50px; top:120px; width:370px; height:150px; background-color:#FFF;"></div>
+	<div id="right_img" style="position:absolute; left:773px; top:120px; width:330px; height:150px; background-color:#FFF;"></div>
+	<div id="animation" style="width: 1053px; height: 510px; left: 50px; top: 350px; position: absolute; background:#000;"><iframe id="animation_iframe" width="1053" height="510" frameborder="0" scrolling="no"></iframe></div>
+
+	<div id="aa" style="width:110px; left:50px; top:70px; background:url(images/a_bg.png);" class="menu2"><img src="images/a_bg1.png"></div>
+	<div id="bb" style="width:130px; left:170px; top:70px; background:url(images/b_bg.png);" class="menu2"><img src="images/b_bg1.png"></div>
+	<div id="cc" style="width:110px; left:310px; top:70px; background:url(images/c_bg.png);" class="menu2"><img src="images/c_bg1.png"></div>
+	<div id="dd" style="width:130px; left:489px; top:178px; background:url(images/d_bg.png);" class="menu2"><img src="images/d_bg1.png"></div>
+	<div id="ee" style="width:110px; left:641px; top:70px; background:url(images/a_bg.png);" class="menu2"><img src="images/e_bg1.png"></div>
+	
+	<div id="aaa" style="width:110px; left:50px; top:70px;" class="menu3">
+		<div id="a1" style="width:110px; top:0px;" class="menu4"><img id="a1_img" src="images/a1.png"></div>
+		<div id="a2" style="width:110px; top:30px;" class="menu4"><img id="a2_img" src="images/a2.png"></div>
+		<div id="a3" style="width:110px; top:60px;" class="menu4"><img id="a3_img" src="images/a3.png"></div>
+		<div id="a4" style="width:110px; top:90px;" class="menu4"><img id="a4_img" src="images/a4.png"></div>
+		<div id="a5" style="width:110px; top:120px;" class="menu4"><img id="a5_img" src="images/a5.png"></div>
+		<div id="a6" style="width:110px; top:150px;" class="menu4"><img id="a6_img" src="images/a6.png"></div>
+	</div>
+	<div id="bbb" style="width:130px; left:170px; top:70px;" class="menu3">
+		<div id="b1" style="width:130px; top:0px;" class="menu4"><img id="b1_img" src="images/b1.png"></div>
+		<div id="b2" style="width:130px; top:30px;" class="menu4"><img id="b2_img" src="images/b2.png"></div>
+		<div id="b3" style="width:130px; top:60px;" class="menu4"><img id="b3_img" src="images/b3.png"></div>
+		<div id="b4" style="width:130px; top:90px;" class="menu4"><img id="b4_img" src="images/b4.png"></div>
+		<div id="b5" style="width:130px; top:120px;" class="menu4"><img id="b5_img" src="images/b5.png"></div>
+		<div id="b6" style="width:130px; top:150px;" class="menu4"><img id="b6_img" src="images/b6.png"></div>
+		<div id="b7" style="width:130px; top:180px;" class="menu4"><img id="b7_img" src="images/b7.png"></div>
+		<div id="b8" style="width:130px; top:210px;" class="menu4"><img id="b8_img" src="images/b8.png"></div>
+		<div id="b9" style="width:130px; top:240px;" class="menu4"><img id="b9_img" src="images/b9.png"></div>
+		<div id="b10" style="width:130px; top:270px;" class="menu4"><img id="b10_img" src="images/b10.png"></div>
+	</div>
+	<div id="ccc" style="width:110px; left:310px; top:70px;" class="menu3">
+		<div id="c1" style="width:110px; top:0px;" class="menu4"><img id="c1_img" src="images/c1.png"></div>
+		<div id="c2" style="width:110px; top:30px;" class="menu4"><img id="c2_img" src="images/c2.png"></div>
+		<div id="c3" style="width:110px; top:60px;" class="menu4"><img id="c3_img" src="images/c3.png"></div>
+	</div>
+	<div id="ddd" style="width:130px; left:489px; top:88px;" class="menu3">
+		<div id="d1" style="width:130px; top:0px;" class="menu4"><img id="d1_img" src="images/d1.png"></div>
+		<div id="d2" style="width:130px; top:30px;" class="menu4"><img id="d2_img" src="images/d2.png"></div>
+		<div id="d3" style="width:130px; top:60px;" class="menu4"><img id="d3_img" src="images/d3.png"></div>
+		<div id="d4" style="width:130px; top:90px;" class="menu4"><img id="d4_img" src="images/d4.png"></div>
+		<div id="d5" style="width:130px; top:120px;" class="menu4"><img id="d5_img" src="images/d5.png"></div>
+		<div id="d6" style="width:130px; top:150px;" class="menu4"><img id="d6_img" src="images/d6.png"></div>
+		<div id="d7" style="width:130px; top:180px;" class="menu4"><img id="d7_img" src="images/d7.png"></div>
+		<div id="d8" style="width:130px; top:210px;" class="menu4"><img id="d8_img" src="images/d8.png"></div>
+		<div id="d9" style="width:130px; top:240px;" class="menu4"><img id="d9_img" src="images/d9.png"></div>
+		<div id="d10" style="width:130px; top:270px;" class="menu4"><img id="d10_img" src="images/d10.png"></div>
+	</div>
+	<div id="eee" style="width:110px; left:641px; top:70px;" class="menu3">
+		<div id="e1" style="width:110px; top:0px;" class="menu4"><img id="e1_img" src="images/e1.png"></div>
+		<div id="e2" style="width:110px; top:30px;" class="menu4"><img id="e2_img" src="images/e2.png"></div>
+		<div id="e3" style="width:110px; top:60px;" class="menu4"><img id="e3_img" src="images/e3.png"></div>
+		<div id="e4" style="width:110px; top:90px;" class="menu4"><img id="e4_img" src="images/e4.png"></div>
+		<div id="e5" style="width:110px; top:120px;" class="menu4"><img id="e5_img" src="images/e5.png"></div>
+		<div id="e6" style="width:110px; top:150px;" class="menu4"><img id="e6_img" src="images/e6.png"></div>
+		<div id="e7" style="width:110px; top:180px;" class="menu4"><img id="e7_img" src="images/e7.png"></div>
+	</div>
+</div>
+<script>
+var a_now = "";
+var b_now = "";
+var c_now = "";
+var d_now = "";
+var e_now = "";
+var imgUrl = "";//图片路径
+
+var abcde_top_array = [0,30,60,90,120,150,180,210,240,270];//abcde项的Y坐标
+
+var a1_click = "b1,b3,b4,b5,b6,b7,b8,b10";//点击a列时，b所能显示的项目
+var a2_click = "b1,b2,b3,b4,b5,b6,b7,b8,b10";
+var a3_click = "b1,b2,b3,b4,b5,b6,b7,b8,b9,b10";
+var a4_click = "b1,b2,b3,b4,b5,b6,b7,b8,b9,b10";
+var a5_click = "b1,b2,b3,b4,b5,b6,b7,b8,b9,b10";
+var a6_click = "b1,b2,b3,b4,b5,b6,b7,b8,b9,b10";
+
+var b1_click = "|||||";//点击b列时，根据a列显示c列所显示的项目
+var b2_click = "|||c1,c2|c1,c2|c1,c2,c3";
+var b3_click = "||c1,c2|c1,c2|c1,c2,c3|c1,c2,c3";
+var b4_click = "||c1,c2|c1,c2|c1,c2,c3|c1,c2,c3";
+var b5_click = "||c1,c2|c1,c2|c1,c2,c3|c1,c2,c3";
+var b6_click = "||c1,c2|c1,c2|c1,c2,c3|c1,c2,c3";
+var b7_click = "||c1,c2|c1,c2|c1,c2,c3|c1,c2,c3";
+var b8_click = "|||||";
+var b9_click = "||||c1,c2|c1,c2";
+var b10_click = "|||||";
+
+
+$(function(){
+	$("#aaa").hide();
+	$("#bbb").hide();
+	$("#ccc").hide();
+	$("#ddd").hide();
+	$("#eee").hide();
+	$("#bb").css("opacity",0.5);
+	$("#cc").css("opacity",0.5);
+	$("#animation_iframe").attr("src","");
+	$(".menu2").mousedown(function(){
+		var temp1 = $(this).attr("id");
+		var temp2 = temp1.substr(0,1);
+		$("#aaa").hide();
+		$("#bbb").hide();
+		$("#ccc").hide();
+		$("#ddd").hide();
+		$("#eee").hide();
+		if ($("#"+temp1).css("opacity") == 1){
+			$("#"+temp1+temp2).show();
+		}
+	});
+	$(".menu4").mousedown(function(){
+		var temp1 = $(this).attr("id");
+		var temp2 = temp1.substr(0,1);
+		var temp3 = temp1.substr(1,10);
+		var temp4,temp5,temp6;
+		var i,j,k;
+		if ($("#"+temp1).css("opacity") == 1){
+			if (temp2 == "a"){
+				a_now = Number(temp3);
+				temp5 = eval(temp1+"_click").split(",");
+				for(i=1;i<=1000;i++){
+					if ($("#b"+i).length > 0){
+						$("#b"+i).hide();
+					}else{
+						break;
+					}
+				}
+				for(i=1;i<=1000;i++){
+					if ($("#c"+i).length > 0){
+						$("#c"+i).hide();
+					}else{
+						break;
+					}
+				}
+				temp6 = true;
+				for (i=0;i<temp5.length;i++){
+					if (Number(temp5[i].substr(1,10)) == b_now){//检测b当前项是否存在
+						temp6 = false;
+					}
+					$("#"+temp5[i]).show();
+					$("#"+temp5[i]).css("top",abcde_top_array[i]+"px");
+				}
+				if (temp6){
+					$("#bb").css("background","url(images/b_bg.png)");
+					$("#cc").css("background","url(images/c_bg.png)");
+					$("#cc").css("opacity",0.5);
+					b_now = 0;
+					c_now = 0;
+				}
+				if (a_now > 0){
+					$("#bb").css("opacity",1);
+				}
+				if (b_now > 0){
+					temp4 = eval("b"+b_now+"_click").split("|");
+					for(i=1;i<=1000;i++){
+						if ($("#c"+i).length > 0){
+							$("#c"+i).hide();
+						}else{
+							break;
+						}
+					}
+					temp6 = false;
+					if (b_now == 0){
+						temp5 = "";
+					}else{
+						temp5 = temp4[a_now-1].split(",");
+					}
+					if (temp5 == ""){
+						temp6 = true;
+					}
+					for (i=0;i<temp5.length;i++){
+						$("#"+temp5[i]).show();
+						$("#"+temp5[i]).css("top",abcde_top_array[i]+"px");
+					}
+					$("#cc").css("opacity",1);
+					if (temp6){
+						c_now = 0;
+						$("#cc").css("opacity",0.5);
+						$("#cc").css("background","url(images/c_bg.png)");
+					}
+				}
+			}
+			if (temp2 == "b"){
+				b_now = Number(temp3);
+				c_now = 0;
+				temp4 = eval(temp1+"_click").split("|");
+				for(i=1;i<=1000;i++){
+					if ($("#c"+i).length > 0){
+						$("#c"+i).hide();
+					}else{
+						break;
+					}
+				}
+				temp6 = false;
+				if (b_now == 0){
+					temp5 = "";
+				}else{
+					temp5 = temp4[a_now-1].split(",");
+				}
+				if (temp5 == ""){
+					temp6 = true;
+				}
+				for (i=0;i<temp5.length;i++){
+					$("#"+temp5[i]).show();
+					$("#"+temp5[i]).css("top",abcde_top_array[i]+"px");
+				}
+				if (b_now > 0){
+					$("#cc").css("opacity",1);
+				}
+				if (temp6){
+					c_now = 0;
+					$("#cc").css("opacity",0.5);
+					$("#cc").css("background","url(images/c_bg.png)");
+				}
+			}
+			if (temp2 == "c"){
+				c_now = Number(temp3);
+			}
+			if (temp2 == "d"){
+				d_now = Number(temp3);
+			}
+			if (temp2 == "e"){
+				e_now = Number(temp3);
+			}
+			$("#left_img").css("background","#FFF");
+			$("#right_img").css("background","#FFF");
+			$("#animation_iframe").attr("src","");
+			if (a_now > 0 && b_now > 0 && c_now >= 0){
+				// 参数: 图片地址, 尺寸就绪事件, 完全加载事件, 加载错误事件
+				imgUrl = "images/abc_"+a_now+"_"+b_now+"_"+c_now+".png";
+				imgReady(imgUrl,function () {
+					//尺寸就绪事件
+					//alert("width:"+this.width+"height:"+this.height);
+					//这个地方很神奇的 可以直接写jquery代码 如下：
+					//alert("haha:"+$("img").width());
+					/*if(this.width>1000){
+						$("img").width("500px");	
+					}*/
+				},function(){
+					//完全加载 懒人建站http://www.51xuediannao.com/为您提供-基于jquery特效，jquery弹出层效果，js特效代码大全，JS广告代码
+					//alert("完全加载");
+					$("#left_img").css("background","url(images/abc_"+a_now+"_"+b_now+"_"+c_now+".png)");
+				},function(){
+					//加载错误事件
+					//alert("加载错误");
+					$("#left_img").css("background","#FFF");
+				});
+			}else{
+				$("#left_img").css("background","#FFF");
+			}
+			if (a_now > 0 && b_now > 0 && c_now >= 0 && d_now > 0 && e_now > 0){
+				//$("#right_img").css("background","url(images/abcde_"+a_now+"_"+b_now+"_"+c_now+"_"+d_now+"_"+e_now+".png)");
+				imgUrl = "images/abcde_"+a_now+"_"+b_now+"_"+c_now+"_"+d_now+"_"+e_now+".png";
+				imgReady(imgUrl,function () {
+					//尺寸就绪事件
+					//alert("width:"+this.width+"height:"+this.height);
+					//这个地方很神奇的 可以直接写jquery代码 如下：
+					//alert("haha:"+$("img").width());
+					/*if(this.width>1000){
+						$("img").width("500px");	
+					}*/
+				},function(){
+					//完全加载 懒人建站http://www.51xuediannao.com/为您提供-基于jquery特效，jquery弹出层效果，js特效代码大全，JS广告代码
+					//alert("完全加载");
+					$("#right_img").css("background","url(images/abcde_"+a_now+"_"+b_now+"_"+c_now+"_"+d_now+"_"+e_now+".png)");
+					$("#animation_iframe").attr("src","animation/animation_"+a_now+"_"+b_now+"_"+c_now+"_"+d_now+"_"+e_now+".html");
+				},function(){
+					//加载错误事件
+					//alert("加载错误");
+					//$("#right_img").css("background","#FFF");
+					$("#right_img").css("background","url(images/abcde_0.png)");
+					$("#animation_iframe").attr("src","animation/animation_"+a_now+"_"+b_now+"_"+c_now+"_"+d_now+"_"+e_now+".html");
+				});
+			}else{
+				$("#right_img").css("background","#FFF");
+				$("#animation_iframe").attr("src","");
+			}
+		}
+		$("#"+temp2+temp2).css("background","url("+$('#'+temp1+'_img').attr('src')+")");
+		$("#"+temp2+temp2+temp2).hide();
+	});
+});
+
+</script>
+
+<script>
+/**
+ * jquery特效http://www.51xuediannao.com/js/
+ * @param	{String}	图片路径
+ * @param	{Function}	尺寸就绪
+ * @param	{Function}	加载完毕 (可选)
+ * @param	{Function}	加载错误 (可选)
+ * @example imgReady('http://www.google.com.hk/intl/zh-CN/images/logo_cn.png', function () {
+		alert('size ready: width=' + this.width + '; height=' + this.height);
+	});
+ */
+var imgReady = (function () {
+	var list = [], intervalId = null,
+
+	// 用来执行队列
+	tick = function () {
+		var i = 0;
+		for (; i < list.length; i++) {
+			list[i].end ? list.splice(i--, 1) : list[i]();
+		};
+		!list.length && stop();
+	},
+
+	// 停止所有定时器队列
+	stop = function () {
+		clearInterval(intervalId);
+		intervalId = null;
+	};
+
+	return function (url, ready, load, error) {
+		var onready, width, height, newWidth, newHeight,
+			img = new Image();
+		
+		img.src = url;
+
+		// 如果图片被缓存，则直接返回缓存数据  <a href="http://www.51xuediannao.com/js/">jquery特效</a> http://www.51xuediannao.com/js/
+		if (img.complete) {
+			ready.call(img);
+			load && load.call(img);
+			return;
+		};
+		
+		width = img.width;
+		height = img.height;
+		
+		// 加载错误后的事件
+		img.onerror = function () {
+			error && error.call(img);
+			onready.end = true;
+			img = img.onload = img.onerror = null;
+		};
+		
+		// 图片尺寸就绪
+		onready = function () {
+			newWidth = img.width;
+			newHeight = img.height;
+			if (newWidth !== width || newHeight !== height ||
+				// 如果图片已经在其他地方加载可使用面积检测
+				newWidth * newHeight > 1024
+			) {
+				ready.call(img);
+				onready.end = true;
+			};
+		};
+		onready();
+		
+		// 完全加载完毕的事件
+		img.onload = function () {
+			// onload在定时器时间差范围内可能比onready快
+			// 这里进行检查并保证onready优先执行
+			!onready.end && onready();
+		
+			load && load.call(img);
+			
+			// IE gif动画会循环执行onload，置空onload即可
+			img = img.onload = img.onerror = null;
+		};
+
+		// 加入队列中定期执行
+		if (!onready.end) {
+			list.push(onready);
+			// 无论何时只允许出现一个定时器，减少浏览器性能损耗
+			if (intervalId === null) intervalId = setInterval(tick, 40);
+		};
+	};
+})();
+</script>
+</body>
+</html>

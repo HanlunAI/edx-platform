@@ -1,0 +1,160 @@
+﻿@import url("../fonts/font-awesome/css/font-awesome.min.css");
+@import url("components.css");
+@import url("icons.css");
+
+
+/* --- General settings --- */
+body {
+	padding-bottom: 30px;
+	font-size: 1.6em;
+	line-height: 1.6;
+	font-family: Microsoft JhengHei, MHei, Hei, Verdana, Geneva, sans-serif;
+	overflow-x: hidden;
+	text-align: justify;
+}
+.btn{
+	background-image: none;
+}
+.btn:focus{
+	outline: none;
+}
+.panel > .panel-heading{
+	background-image: none;
+}
+button:focus{
+	outline: none;
+}
+a:focus{
+	outline: none;
+}
+a:hover{
+	cursor: pointer;
+}
+.MathJax{
+	pointer-events: none;
+}
+.MathJax:focus{
+	outline: none;
+}
+
+.modal-dialog {
+	top:50% !important;
+}
+
+/* --- Banner --- */
+header .header .icon{	position: absolute; padding: 15px 0px; z-index: 5;}
+
+.banner{ background:#450099; padding-top:80px; position:relative; overflow:hidden;}
+.banner .container{position: relative;}
+.banner .bg{ position: absolute; height:100%; width:auto; right:0; top:0;}
+.banner .title{color: #FFF; min-height: 220px; position: relative; padding-bottom: 20px;}
+.banner.lesson .title{min-height: 120px;}
+.banner .title h2{ font-size: 70px; font-weight: 300; line-height: 60px; margin-bottom: 15px;}
+.banner .title h3{ font-size: 36px;}
+.banner .title p{ margin-top: 10px; font-size: 17px; line-height: 1.6em; text-align: justify;}
+
+.banner.bio {background:#1aa0ac}
+.banner.chem {background:#1074bf}
+.banner.maths {background:#8ab74e}
+.banner.phy {background:#450099}
+
+.breadcrumb-holder{background:#FF6D1A;}
+.breadcrumb-holder .container{position: relative;}
+.breadcrumb-holder .breadcrumb{background:none;margin-bottom: 0;padding: 13px 0;}
+.breadcrumb-holder a{color:#FFF; text-decoration:none; transition: border-color 0.2s; border-bottom: 2px solid rgba(255,255,255,0); }
+.breadcrumb-holder a:hover{ border-color: rgba(255,255,255,0.8); }
+.breadcrumb-holder .breadcrumb > li + li::before {content:'>';color:#FFF;}
+.breadcrumb-holder .lang{position: absolute;right:0;top:0;background:#b22e4d;padding:13px;}
+.breadcrumb-holder .lang a{margin:0 7px; position: relative; text-decoration:none;}
+.breadcrumb-holder .lang a.on{ border-bottom: 3px solid white;}
+.breadcrumb-holder .lang a:not(.on):hover{ border-color: rgba(255,255,255,0.7); }
+
+/* --- Diagnostic index page --- */
+.content.lesson-info table.lesson-index.diagnostic  thead th { padding:15px; padding-left: 20px; color:#FFF; background:#21d3e3; margin-bottom:1px; font-size:19px; width: 50%;}
+.diagnostic.breadcrumb-holder{background:#21d3e3;}
+.diagnostic.breadcrumb-holder .lang{background:#4469be;}
+.diagnostic.breadcrumb-holder .lang a{color:#FFF;}
+
+.content.lesson-info .btn-test{ /* position:absolute; */ float:right; top: 3px; right: 3px; background:#4469be;border-bottom: 2px solid #1d3a7c;display:inline-block;margin-right:0;vertical-align: middle;color: #FFF;border-radius: 0;padding: 6px 20px; }
+
+/* --- Diagnostic switch on from general index page --- */
+.content.lesson-info.diagnostic table.lesson-index a{
+	pointer-events: none;
+	color: black !important;
+}
+.content.lesson-info.diagnostic .title{
+	padding-right: 140px;
+}
+.content.lesson-info.diagnostic div.btn-test{
+	display: inline-block;
+}
+.content.lesson-info div.btn-test{
+	/* display: none; */
+}
+
+
+/* --- Content panel --- */
+.container.content{padding-top: 45px;}
+
+/* --- index page --- */
+.content.lesson-info > .row{padding-bottom:40px; border-bottom:1px solid #CCC; margin-bottom:45px; position: relative; text-align: justify;}
+.content.lesson-info > .row:last-of-type{border:none;margin-bottom:0;}
+.content.lesson-info p{font-size:17px;line-height: 1.6em;}
+.content.lesson-info .title{font-size:26px;font-weight: bold;margin-bottom:20px;position: relative;}
+.content.lesson-info > .row > div[class^=col]{margin-bottom: 25px;}
+.content.lesson-info table.lesson-index {
+    border-collapse: initial;
+    border-spacing: 2px 2px;
+	width: 100%;
+}
+.content.lesson-info table.lesson-index thead th { padding:15px; padding-left: 20px; color:#FFF; background:#FF6712; margin-bottom:1px; font-size:19px; width: 50%;}
+.content.lesson-info table.lesson-index tr td { margin:0; margin-bottom:1px; background:#f1f1f1; position: relative; padding:15px; padding-left:35px;}
+.content.lesson-info table.lesson-index tr{ color:#000; font-size:17px; }
+.content.lesson-info table.lesson-index ul{ list-style: none; color: black; padding:0; margin: 0;}
+.content.lesson-info table.lesson-index ul li{ padding-bottom: 8px; position: relative;}
+.content.lesson-info table.lesson-index ul li:last-of-type{ padding-bottom: 0;}
+.content.lesson-info table.lesson-index ul li:before{ content:'.'; font-size:26px; position: absolute; left: -0.6em; top: -0.6em;}
+.content.lesson-info table.lesson-index  a{ color: #6647d7; text-decoration:none; }
+.content.lesson-info table.lesson-index  a:before{ content:''; width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: rgba(0,0,0,0.1); opacity: 0; transition: opacity 0.2s; }
+.content.lesson-info table.lesson-index a:hover{ color: #4125a7; }
+.content.lesson-info table.lesson-index a:hover:before{ opacity: 1; }
+
+
+/* --- Next Lesson --- */
+.next-lesson{
+	margin-top: 35px;
+	padding-top: 25px;
+	border-top: 1px solid #CCC;
+}
+.next-lesson a{ color: #6647d7; text-decoration:none; position: relative; padding: 8px 12px; transition: color 0.2s; }
+.next-lesson a:before{ content: ''; width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: #ccc; opacity: 0; transition: opacity 0.2s;}
+.next-lesson a:hover{ color: #4125a7; }
+.next-lesson a:hover:before{ opacity: 0.3; }
+
+
+/* --- company infomation --- */
+body > footer .container{padding-top: 60px;padding-bottom:20px;}
+body > footer .container p{font-size:13px;margin-bottom:0;}
+
+
+/* --- List --- */
+ol.parentheses {
+	counter-reset: list;
+	margin: 0;
+}
+
+ol.parentheses > li {
+	list-style: none;
+	position: relative;
+}
+
+ol.parentheses > li:before {
+	counter-increment: list;
+	content: "(" counter(list, decimal) ") ";
+	position: absolute;
+	left: -1.4em;
+}
+
+.breadcrumb-holder .lang {
+	display: none;
+}
